@@ -2,11 +2,6 @@
 import { Game } from "./types";
 
 
- // --- VARIABLES -----------------------------------------------
-const MAX_FRAMES = 10;
-const START_PIN_COUNT = 10;
-
-
  // --- FUNCTIONS -----------------------------------------------
 export function compute(game: Game): number {
   try {
@@ -18,18 +13,13 @@ export function compute(game: Game): number {
   }
 }
 
-
 const calculate_score = function (game: Game): number {
   let total_score = 0;
 
-  // spare = 10 + volgende 1 hit als score vorig frame
-  // strike = 10 + volgende 2 hits als score vorig frame
-  // strike telt als 10 voor spare => 20
-  // Calculate the total score
+
   try {
     for (let i = 0; i < game.length; i++) {
       let frame = game[i];
-      //console.log(`frame: ${frame}`)
       let frame_score =  frame[0] + frame[1]
 
       // strikes
@@ -55,6 +45,7 @@ const calculate_score = function (game: Game): number {
 };
 
 
+// --- FUNCTIONS - SCORE CALCULATION -----------------------------------------------------------------------------------------------
 const get_score_strike = function(game: Game, i: number): number{
   let frame = game[i];
   let throw0 = frame[0]

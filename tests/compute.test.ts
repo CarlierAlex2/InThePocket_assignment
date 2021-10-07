@@ -1,6 +1,8 @@
 import { compute } from "../src/compute";
 import { Game } from "../src/types";
 
+
+// --- TEST - SUCCESS -----------------------------------------------------------------------------------------------
 // perfect game
 it("should return 300 on a perfect game", () => {
   const inputscore: Game = [
