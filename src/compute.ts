@@ -71,7 +71,7 @@ const get_score_strike = function(game: Game, i: number): number{
       }
     // single strike
     else{
-      score = frame_score + next_throw_score;
+      score = frame_score + next_throw_score + game[i+1][1];
     }
   }
   
@@ -104,17 +104,9 @@ const get_score_spare = function(game: Game, i: number): number{
   let frame_score = throw0 + throw1
   let score = 0;
 
-  // frame 1 - 9
-  if (i < 9){
-    score = frame_score + game[i+1][0];
-  }
-
-  // frame 10
-  else{
-    score = frame_score + frame[2];
-  }
-
   // return score
-  return score
+  if (i >= 9) 
+    return frame_score + frame[2]; // frame 10
+  return frame_score + game[i+1][0]; // frame 1 - 9
 }
 
