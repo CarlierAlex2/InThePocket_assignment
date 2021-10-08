@@ -13,9 +13,9 @@ export function compute(game: Game): number {
   }
 }
 
+
 const calculate_score = function (game: Game): number {
   let total_score = 0;
-
 
   try {
     for (let i = 0; i < game.length; i++) {
@@ -38,9 +38,10 @@ const calculate_score = function (game: Game): number {
     }    
   } 
   catch (error) {
-    throw new Error(`Error: ${error}`); // TODO
+    throw new Error(`Error: ${error}`);
   }
  
+    // return score
   return total_score;
 };
 
@@ -87,6 +88,7 @@ const get_score_strike = function(game: Game, i: number): number{
   // return score
   return score
 }
+
 
 const get_score_spare = function(game: Game, i: number): number{
   let frame = game[i];
